@@ -1,0 +1,69 @@
+package interfaz;
+
+import java.awt.Color;
+
+import javax.swing.*;
+
+
+public class ventana {
+JFrame ventana;
+JLabel texto;
+JLabel texto2;
+JLabel texto3;
+JLabel texto4;
+JPanel panelA,panelB,panelC;
+JButton boton = new JButton();
+
+void panelA() {
+	boton.setText("holaa");
+	boton.setBounds(7,10,100,100);
+	texto = new JLabel("hola");
+	texto2 = new JLabel("hola2");
+	panelA = new JPanel();
+	panelA.setLayout(null);
+	panelA.setBackground(Color.RED);
+	panelA.setLayout(new BoxLayout(panelA,BoxLayout.Y_AXIS));
+	panelA.add(texto);
+	panelA.add(texto2);
+	panelA.add(boton);
+	
+	
+}
+void panelB() {
+	texto3 = new JLabel("hola");
+
+	texto4 = new JLabel("hola2");
+	panelB = new JPanel();
+	panelB.setBackground(Color.blue);
+	panelC = new JPanel();
+	texto3.setBounds(13,100,70,20);
+	panelB.add(texto3);
+	panelB.add(texto4);
+	panelC.setBackground(Color.cyan);
+	
+	panelB.setLayout(new BoxLayout(panelB,BoxLayout.Y_AXIS));
+	panelC.add(panelB);
+
+}
+	void crearventana(){
+		ventana = new JFrame();
+		ventana.setTitle("ejemplo form");
+		ventana.setVisible(true);
+		ventana.setSize(400,400);
+		ventana.setLayout(new BoxLayout(ventana.getContentPane(),BoxLayout.Y_AXIS));
+		texto2.setText("cocacola");
+		ventana.add(panelA);
+		ventana.add(panelC);
+
+		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
+		ventana.setLocationRelativeTo(null);
+	}
+	
+	
+	ventana(){
+		panelA();
+		panelB();
+		crearventana();
+	
+	}
+}

@@ -1,0 +1,126 @@
+package interfaz;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+
+public class ventana {
+JFrame ventana;
+JPanel panel_principal;
+JLabel texto , texto2 , text3 , texto3;
+JComboBox<String> botonBox;
+
+JPanel panelUP,panelMeddium,panelC;
+JButton boton = new JButton();
+
+void panelUP() {
+	
+	botonBox = new JComboBox<String>();
+    botonBox.addItem("rojo");
+    botonBox.addItem("vede");
+    botonBox.addItem("azul");
+    botonBox.addItem("amarillo");
+    botonBox.addItem("negro");
+
+	boton.setBounds(30,30,100,30);
+	texto = new JLabel("establece propiedad jlabel1's font utilizando ");
+	texto.setFont(new Font("Verdana",0, 15));
+
+	panelUP = new JPanel();
+
+	panelUP.setLayout(new FlowLayout(FlowLayout.CENTER,40,40));
+
+
+	panelUP.add(texto);
+	panelUP.add(botonBox);
+	
+	
+}
+void panelMeddium() {
+	JPanel panelUP2,panelMeddium2,panelC2;
+	JPanel fuente, estilo , tamano ;
+	JLabel fuentes;
+	JTextField cuadro;
+    JList lista1;
+    
+	panelUP2 = new JPanel();
+	panelUP2.setLayout(new BoxLayout(panelUP2,BoxLayout.Y_AXIS));
+	panelUP2.add(new JRadioButton( "obtener el tipo de letra a partir del tipo de letra predeterminado"));
+
+	fuentes = new JLabel("Fuentes");
+	
+	cuadro = new  JTextField("aa");
+	
+	String  fonts[]= { "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+	lista1 = new JList(fonts);
+	
+
+
+	fuente = new JPanel();
+	fuente.add(fuentes);
+	fuente.add(cuadro);
+	fuente.add(lista1);
+	
+
+	
+	panelMeddium2 = new JPanel();
+	panelMeddium2.setLayout(new BoxLayout(panelMeddium2,BoxLayout.X_AXIS));
+	panelMeddium2.add(fuentes);
+;
+	
+	
+	
+	panelMeddium = new JPanel();
+	panelMeddium.setLayout(new BoxLayout(panelMeddium,BoxLayout.X_AXIS));
+	panelMeddium.add(panelUP2);
+	panelMeddium.add(panelMeddium2);
+	
+	
+	
+
+
+}
+	void crearventana(){
+		ventana = new JFrame();
+		ventana.setTitle("ejemplo form");
+		ventana.setVisible(true);
+		ventana.setSize(600,600);
+		ventana.setLayout(new BoxLayout(ventana.getContentPane(),BoxLayout.Y_AXIS));
+		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
+		ventana.setLocationRelativeTo(null);
+		
+		
+		panel_principal = new JPanel();
+		panel_principal.setLayout(new BorderLayout());
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		panel_principal.add(panelUP,BorderLayout.NORTH);
+		panel_principal.add(panelMeddium,BorderLayout.CENTER);
+
+
+
+		ventana.add(panel_principal);
+		
+		
+	}
+	
+	
+	ventana(){
+		panelUP();
+		panelMeddium();
+		crearventana();
+	
+	}
+}

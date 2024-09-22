@@ -1,0 +1,78 @@
+package interfaz;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+
+import javax.swing.*;
+
+
+public class ventana {
+JFrame ventana;
+JLabel texto , texto2 , text3 , texto3;
+JComboBox<String> botonBox;
+
+JPanel panelUP,panelMeddium,panelC;
+JButton boton = new JButton();
+
+void panelUP() {
+	
+	botonBox = new JComboBox<String>();
+    botonBox.addItem("rojo");
+    botonBox.addItem("vede");
+    botonBox.addItem("azul");
+    botonBox.addItem("amarillo");
+    botonBox.addItem("negro");
+
+	boton.setBounds(30,30,100,30);
+	texto = new JLabel("establece propiedad jlabel1's font utilizando ");
+	texto.setFont(new Font("Verdana",0, 15));
+
+	panelUP = new JPanel();
+
+	panelUP.setLayout(new FlowLayout(FlowLayout.RIGHT,40,40));
+
+
+	panelUP.add(texto);
+	panelUP.add(botonBox);
+	
+	
+}
+void panelMeddium() {
+	boton.setText("holaa");
+	boton.setBounds(7,10,100,100);
+	texto = new JLabel("hola");
+	texto2 = new JLabel("hola2");
+	panelMeddium = new JPanel();
+	panelMeddium.setLayout(null);
+
+	panelMeddium.setLayout(new BoxLayout(panelMeddium,BoxLayout.Y_AXIS));
+	panelMeddium.add(texto);
+	panelMeddium.add(texto2);
+
+
+}
+	void crearventana(){
+		ventana = new JFrame();
+		ventana.setTitle("ejemplo form");
+		ventana.setVisible(true);
+		ventana.setSize(600,600);
+		ventana.setLayout(new BoxLayout(ventana.getContentPane(),BoxLayout.Y_AXIS));
+		ventana.add(panelUP);
+		ventana.add(panelMeddium);
+
+		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
+		ventana.setLocationRelativeTo(null);
+
+		
+		
+	}
+	
+	
+	ventana(){
+		panelUP();
+		panelMeddium();
+		crearventana();
+	
+	}
+}

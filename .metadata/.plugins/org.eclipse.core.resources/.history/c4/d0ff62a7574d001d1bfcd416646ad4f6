@@ -1,0 +1,66 @@
+package interfaz;
+
+import java.awt.Color;
+
+import javax.swing.*;
+
+
+public class ventana {
+JFrame ventana;
+JLabel texto;
+JLabel texto2;
+JLabel texto3;
+JLabel texto4;
+JPanel panelUP,panelMeddium,panelC;
+JButton boton = new JButton();
+
+void panelUP() {
+	boton.setText("holaa");
+	boton.setBounds(7,10,100,100);
+	texto = new JLabel("hola");
+	texto2 = new JLabel("hola2");
+	panelUP = new JPanel();
+	panelUP.setLayout(null);
+	panelUP.setBackground(Color.RED);
+	panelUP.setLayout(new BoxLayout(panelUP,BoxLayout.Y_AXIS));
+	panelUP.add(texto);
+	panelUP.add(texto2);
+	panelUP.add(boton);
+	
+	
+}
+void panelMeddium() {
+	boton.setText("holaa");
+	boton.setBounds(7,10,100,100);
+	texto = new JLabel("hola");
+	texto2 = new JLabel("hola2");
+	panelMeddium = new JPanel();
+	panelMeddium.setLayout(null);
+	panelMeddium.setBackground(Color.RED);
+	panelMeddium.setLayout(new BoxLayout(panelMeddium,BoxLayout.Y_AXIS));
+	panelMeddium.add(texto);
+	panelMeddium.add(texto2);
+	panelMeddium.add(boton);
+
+}
+	void crearventana(){
+		ventana = new JFrame();
+		ventana.setTitle("ejemplo form");
+		ventana.setVisible(true);
+		ventana.setSize(400,400);
+		ventana.setLayout(new BoxLayout(ventana.getContentPane(),BoxLayout.Y_AXIS));
+		ventana.add(panelUP);
+		ventana.add(panelMeddium);
+
+		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
+		ventana.setLocationRelativeTo(null);
+	}
+	
+	
+	ventana(){
+		panelUP();
+		panelMeddium();
+		crearventana();
+	
+	}
+}

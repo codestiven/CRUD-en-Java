@@ -1,0 +1,144 @@
+package interfaz;
+
+import java.awt.*;
+
+
+import javax.swing.*;
+
+
+public class ventana {
+JFrame ventana;
+JPanel panel_principal;
+JLabel texto , texto2 , text3 , texto3;
+JComboBox<String> botonBox;
+
+JPanel panelUP,panelMeddium,panelC;
+JButton boton = new JButton();
+
+void panelUP() {
+	
+	botonBox = new JComboBox<String>();
+    botonBox.addItem("rojo");
+    botonBox.addItem("vede");
+    botonBox.addItem("azul");
+    botonBox.addItem("amarillo");
+    botonBox.addItem("negro");
+
+	boton.setBounds(30,30,100,30);
+	texto = new JLabel("establece propiedad jlabel1's font utilizando ");
+	texto.setFont(new Font("Verdana",0, 15));
+
+	panelUP = new JPanel();
+
+	panelUP.setLayout(new FlowLayout(FlowLayout.RIGHT,40,40));
+
+
+	panelUP.add(texto);
+	panelUP.add(botonBox);
+	
+	
+}
+void panelMeddium() {
+	JPanel panelUP2,panelMeddium2,panelC2;
+	JPanel fuente, estilo , tamano ;
+	JLabel fuentes , estilos , tamanos;
+	JTextField cuadro,cuadro2;
+    JList lista1 ,  lista2;
+
+	fuentes = new JLabel("Fuentes:");
+	estilos = new JLabel("estilos de Fuentes:");
+	tamanos = new JLabel("tamaño:");
+	
+
+	cuadro = new  JTextField("aa");
+	cuadro2 = new  JTextField("aa");
+	
+	String  fonts[]= { "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+	
+	lista1 = new JList(fonts);
+	lista2 = new JList(fonts);
+	
+	panelUP2 = new JPanel();
+	panelUP2.setLayout(new BoxLayout(panelUP2,BoxLayout.Y_AXIS));
+	panelUP2.add(new JRadioButton( "obtener el tipo de letra a partir del tipo de letra predeterminado"));
+	
+
+	
+	
+	fuente = new JPanel();
+	fuente.setLayout(new BoxLayout(fuente,BoxLayout.Y_AXIS));
+	fuente.add(fuentes);
+	fuente.add(cuadro);
+	fuente.add(lista1);
+	
+	estilo = new JPanel();
+	estilo.setLayout(new BoxLayout(estilo,BoxLayout.Y_AXIS));
+	estilo.add(estilos);
+	estilo.add(cuadro2);
+	estilo.add(lista2);
+	
+	
+
+	
+	panelMeddium2 = new JPanel();
+	panelMeddium2.setLayout(new BoxLayout(panelMeddium2,BoxLayout.X_AXIS));
+	panelMeddium2.add(fuente);
+	panelMeddium2.add(estilo);
+
+
+	
+	
+	
+	panelMeddium = new JPanel();
+	panelMeddium.setLayout(new BoxLayout(panelMeddium,BoxLayout.Y_AXIS));
+	panelMeddium.add(panelUP2);
+	panelMeddium.add(panelMeddium2);
+	
+	
+	
+
+
+}
+	void crearventana(){
+		ventana = new JFrame();
+		ventana.setTitle("ejemplo form");
+		ventana.setVisible(true);
+		ventana.setSize(600,600);
+
+		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
+		ventana.setLocationRelativeTo(null);
+		
+		
+		panel_principal = new JPanel();
+	
+		
+		
+		panel_principal.setLayout(new BorderLayout());
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		panel_principal.add(panelUP,BorderLayout.NORTH);
+		panel_principal.add(panelMeddium,BorderLayout.CENTER);
+
+
+
+		ventana.add(panel_principal);
+		
+		
+	}
+	
+	
+	ventana(){
+		panelUP();
+		panelMeddium();
+		crearventana();
+	
+	}
+}
